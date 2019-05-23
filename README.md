@@ -35,6 +35,7 @@
 $ git clone https://github.com/sm450203924/competition.git
 ```  
 - 部署好php相关环境
+- 部署好数据库
 - 启动单一入口文件index.php即可运行
 <br>
 
