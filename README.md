@@ -26,7 +26,7 @@
 ## 网站截图：
 | **网站首页** | **大赛简介** | **我的信息** | **手机端首页** |  
 | :---: |:---:| :---:|  :---:|  
-| ![image](https://github.com/sm450203924/competition/raw/master/screenshot/homepage.png)|![image](https://github.com/sm450203924/competition/raw/master/screenshot/competition-intro.png)|![image](https://github.com/sm450203924/competition/raw/master/screenshot/personal-myinfo.png)|![image](https://github.com/sm450203924/competition/raw/master/screenshot/homepage-phone.png) | 
+| ![image](https://github.com/sm450203924/competition/raw/master/screenshots/homepage.png)|![image](https://github.com/sm450203924/competition/raw/master/screenshots/competition-intro.png)|![image](https://github.com/sm450203924/competition/raw/master/screenshots/personal-myinfo.png)|![image](https://github.com/sm450203924/competition/raw/master/screenshots/homepage-phone.png) | 
 <br>
 
 ## 使用指南：
