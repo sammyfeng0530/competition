@@ -1,0 +1,71 @@
+<header class="top container">
+    <div>
+        <div class="school-logo">
+            <span><img src="assets/images/just-logo.png" alt="logo"></span>
+            <span>江苏科技大学</span>
+        </div>
+        <div class="login-and-register">
+            {if isset($smarty.session.userId)}
+            <div class="logout-btn" title="logout"><a href="index.php?controller=Index&method=logout">退出登录</a></div>
+            {else}
+            <div class="login-btn" title="login">登录</div>
+            <div class="signup-btn" title="register">注册</div>
+            {/if}
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="banner-words">
+        <h1>企业管理虚拟实景实验设计大赛</h1>
+        <div></div>
+    </div>
+    <!--Menu-->
+    <nav class="menu navbar">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse"
+                    data-target=".navbar-responsive-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand"></a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-responsive-collapse">
+            <ul class="nav nav-tabs nav-justified">
+                <li><a href="index.php?controller=Index&method=index" class="active"><span>网站首页</span></a></li>
+                <li><a href="index.php?controller=Index&method=indexContestProfileView"><span>大赛简介</span></a></li>
+                <li><a href="index.php?controller=Index&method=indexContestArrangementView"><span>赛程安排</span></a></li>
+                <li><a href="index.php?controller=Index&method=indexContestNewsView"><span>赛事动态</span></a></li>
+                <li><a href="index.php?controller=Index&method=indexContestSchemeView"><span>方案展示</span></a></li>
+                <li class="btn-group dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="index.php?controller=Index&method=getPlatformIntro">
+                        <span>课程中心</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-left">
+                        <li><a href="index.php?controller=Index&method=getPlatformIntro"><span>平台介绍</span></a></li>
+                        <li><a href="index.php?controller=Index&method=getOperationManual"><span>操作手册</span></a></li>
+                        <li><a href="index.php?controller=Index&method=getVideoIntro"><span>视频介绍</span></a></li>
+                    </ul>
+                </li>
+                {if isset($smarty.session.userId)}
+                <li class="btn-group dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="index.php?controller=User&method=index">
+                        <span>个人中心</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-left">
+                        <li><a href="index.php?controller=User&method=index"><span>我的信息</span></a></li>
+                        <li><a href="index.php?controller=User&method=getMyTeamInfo"><span>我的队伍</span></a></li>
+                        <li><a href="index.php?controller=User&method=getMyScheme"><span>团队方案</span></a></li>
+                        <li><a href="index.php?controller=User&method=getSignup"><span>参赛报名</span></a></li>
+                    </ul>
+                </li>
+                {else}
+                <li><a href="index.php?controller=Index&method=indexContestSignupView"><span>报名详情</span></a></li>
+                {/if}
+            </ul>
+        </div>
+    </nav>
+    <!--Menu End-->
+</header>

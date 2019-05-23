@@ -1,0 +1,157 @@
+<?php /* Smarty version Smarty-3.1.16, created on 2019-05-22 22:31:40
+         compiled from "assets\html\index\main\indexContestNewsView.html" */ ?>
+<?php /*%%SmartyHeaderCode:228495ce55d4c5ab175-31134005%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '74b736ec6bc2d0d2658744439dc8a18fdf6bc16f' => 
+    array (
+      0 => 'assets\\html\\index\\main\\indexContestNewsView.html',
+      1 => 1558097630,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '228495ce55d4c5ab175-31134005',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.16',
+  'unifunc' => 'content_5ce55d4c62e1f2_50387461',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5ce55d4c62e1f2_50387461')) {function content_5ce55d4c62e1f2_50387461($_smarty_tpl) {?><!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=0.5, maximum-scale=1.5, user-scalable=yes"/>
+    <?php echo $_smarty_tpl->getSubTemplate ('index/part_views/common/all_css.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+</head>
+<body>
+
+<?php if (isset($_SESSION['userId'])) {?>
+<?php echo $_smarty_tpl->getSubTemplate ('index/part_views/common/popupForm_part.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+<?php } else { ?>
+<?php echo $_smarty_tpl->getSubTemplate ('index/part_views/common/loginForm_part.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+<?php }?>
+
+<?php echo $_smarty_tpl->getSubTemplate ('index/part_views/common/top_part.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+
+<article class="container hp-content">
+    <div class="hp-container">
+        <article class="contest-events-content">
+            <h1>赛事动态</h1>
+            <section>
+                <section class="news-section">
+                    <header class="news-time" id="news-time1">
+                        <div><h2>09月02日</h2></div>
+                    </header>
+                    <article class="row">
+                        <p class="col-sm-8">
+                            企业管理虚拟实景实验设计大赛分为实验设计、实验实施和实验设计答辩三个赛段，参赛队伍必须参见所有赛段，分数为三个赛段之和。
+                            大赛启动后，选手可免费下载大赛虚拟实景平台和辅助资料（关注大赛官网），参赛队员自行安装或联系金舟技术支持人员远程安装，安装后可以使用软件进行练习。
+                            参加初赛每个学院参赛报名队伍限制不超过5支，为支持更多学生参赛的热情，对于报名队伍较多的学院，学校可安排组织院内预选；或由技术支持公司协助在线选拔，为学校提供选拔赛成绩，由学校确定参赛的队伍。
+                        </p>
+                        <img class="col-sm-4" src="assets/images/news_pic/newspic1.jpg"/>
+                    </article>
+                </section>
+
+                <section class="news-section">
+                    <header class="news-time" id="news-time2">
+                        <div><h2>09月02日</h2></div>
+                    </header>
+                    <article class="row">
+                        <p class="col-sm-12">
+                            初赛参赛队伍确定后统一时间在大赛网站公布赛题，并进入实验设计赛段，本赛段时间为两周时间，选手利用课余时间在线使用企业管理虚拟实景平台，根据平台所提供的虚拟实验内容以及赛题要求等进行实验设计。两周实验设计时间结束后把实验设计指导书电子文档递交至指定邮箱（123@123.com）；按赛程要求时间抵达赛点进行下一个赛段，在报名签到时递交三份纸质方案，同期准备好方案答辩用的讲解PPT等展示材料。
+                        </p>
+                    </article>
+
+                </section>
+
+                <section class="news-section">
+                    <header class="news-time" id="news-time3">
+                        <div><h2>09月03日</h2></div>
+                    </header>
+                    <article class="row">
+                        <img class="col-sm-4" src="assets/images/news_pic/newspic2.jpg"/>
+                        <p class="col-sm-8">
+                            实验设计讲解答辩赛段在学校指定地方举行，在实验设计答辩前抽签决定顺序。选手先讲解方案，然后现场专家指定2-3个方案中的点进行提问与答辩，每队答辩总时间为10分钟，专家依据现场表现和讲解内容等综合因素进行现场打分，现场专家有企业专家与学术专家共同组成，初赛答辩专家人数不少于三名。
+                        </p>
+                    </article>
+
+                </section>
+
+                <section class="news-section">
+                    <header class="news-time" id="news-time4">
+                        <div><h2>09月03日</h2></div>
+                    </header>
+                    <article class="row">
+                        <p class="col-sm-12">
+                            晋级规则:
+                            所有3个赛段结束后，汇总成绩，按总分由高至低进行排名。每个学院取前1名队伍进入总决赛。如有意外情况既定的队伍无法参加决赛的，按照总分排名的顺序依次序递补。
+                        </p>
+                    </article>
+
+                </section>
+
+                <section class="news-section">
+                    <header class="news-time" id="news-time5">
+                        <div><h2>11月20日</h2></div>
+                    </header>
+                    <article class="row">
+                        <p class="col-sm-8">
+                            总决赛:
+                            总决赛的赛段安排跟初赛保持一致，在实验设计阶段有一份新的设计题目，新题目的设计是对初赛实验设计的延伸和拓展，设计的难度有所加深；同时由于在初赛中各晋级队伍的方案或多或少还存在一些问题，在决赛的实验设计中需要进一步的优化初赛的方案，提交方案时同时提交初赛优化后的方案和决赛新方案，两份方案写在一个文档中。两周方案设计时间结束后把方案电子文档递交至指定邮箱（123@123.com）。
+                        </p>
+                        <img class="col-sm-4" src="assets/images/news_pic/newspic3.jpg"/>
+                    </article>
+
+                </section>
+
+                <section class="news-section">
+                    <header class="news-time" id="news-time6">
+                        <div><h2>11月22日</h2></div>
+                    </header>
+                    <article class="row">
+                        <p class="col-sm-12">
+                            实验实施赛段在学校机房统一进行，在开始前工作人员统一公布大赛任务数据，选手在作业执行前必须先进行任务的分析，结合《实验设计指导书》的考卷要求，制定出具体的实验设计方案，对整个作业过程进行完整细致的规划。然后按照执行方案多人协同高效完成任务。
+                        </p>
+                    </article>
+
+                </section>
+
+                <section class="news-section">
+                    <header class="news-time" id="news-time7">
+                        <div><h2>11月23日</h2></div>
+                    </header>
+                    <article class="row">
+                        <p class="col-sm-8">
+                            实验设计讲解答辩赛段在学校指定地方举行，在方案答辩前抽签决定顺序，答辩内容包括初赛方案和决赛新方案，由于时间有限选手在讲解出赛方案时可自行选取1-2个你认为有可讲之处的点，决赛新方案部分须全部讲解；讲解完毕由现场专家指定2-3个实验设计中的考点进行提问与答辩，每队答辩总时间为15分钟，专家依据现场表现和讲解内容等综合因素进行现场打分。现场专家有企业专家与学术专家共同组成，决赛答辩专家人数不少于五名。
+                        </p>
+                        <img class="col-sm-4" src="assets/images/news_pic/newspic4.jpg"/>
+                    </article>
+
+                </section>
+
+                <?php echo $_smarty_tpl->getSubTemplate ('index/part_views/common/signup_button_part.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+            </section>
+
+        </article>
+    </div>
+</article>
+
+<?php echo $_smarty_tpl->getSubTemplate ('index/part_views/common/footer_part.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+
+</body>
+<?php echo $_smarty_tpl->getSubTemplate ('index/part_views/common/all_script.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+</html>
+
+<?php }} ?>

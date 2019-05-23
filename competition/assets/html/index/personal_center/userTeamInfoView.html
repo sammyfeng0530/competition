@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=0.5, maximum-scale=1.5, user-scalable=yes"/>
+    {include file='index/part_views/common/all_css.html'}
+</head>
+<body>
+{if isset($smarty.session.userId)}
+{include file='index/part_views/common/popupForm_part.html'}
+{else}
+{include file='index/part_views/common/loginForm_part.html'}
+{/if}
+{include file='index/part_views/common/top_part.html'}
+
+<article class="container hp-content">
+    <div class="hp-container">
+        <div class="personal-center">
+            {include file='index/part_views/personal_center/userLeftMenuView_part.html'}
+            <section class="right-content col-xs-9">
+                <div class="right-container">
+                    {if isset($team)}
+                    <form class="myTeamInfo form-horizontal" action="index.php?controller=Team&method=createTeam" method="post">
+                        <div class="form-group">
+                            <div class="col-xs-4 control-label">团队ID</div>
+                            <div class="col-xs-8"><span>{$team.team_id|default:''}</span></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-4 control-label">团队名称</div>
+                            <div class="col-xs-8"><input type="text" disabled="disabled" class="form-control" value="{$team.team_name|default:''}" name="team_name"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-4 control-label">邀请码</div>
+                            <div class="col-xs-8"><input type="text" disabled="disabled" class="form-control" value="{$team.team_invitation_code|default:''}" name="team_invitation_code"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-4 control-label">团队口号</div>
+                            <div class="col-xs-8"><input type="text" disabled="disabled" class="form-control" value="{$team.team_slogan|default:''}" name="team_slogan"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-4 control-label">团队简介</div>
+                            <div class="col-xs-8"><input type="text" disabled="disabled" class="form-control" value="{$team.team_profile|default:''}" name="team_profile"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-4 control-label">报名情况</div>
+                            <div class="col-xs-8">
+                                {if $signup neq null}
+                                {if $signup.signup_situation == 0}
+                                <input type="radio" name="signup_situation" class="operate-radio" value="0"><label>审核中</label>
+                                {else}
+                                <input type="radio" name="signup_situation" class="operate-radio" value="1"><label>成功报名</label>
+                                {/if}
+                                {else}
+                                <input type="radio" name="signup_situation" class="operate-radio" value=""><label>未报名</label>
+                                {/if}
+                            </div>
+                        </div>
+                        {if $signup eq null}
+                        <div class="form-group update">
+                            <div class="col-xs-12">
+                                <a class="">修&nbsp改</a>
+                            </div>
+                        </div>
+                        <div class="form-group confirm">
+                            <div class="col-xs-12">
+                                <a class="">确&nbsp认</a>
+                            </div>
+                        </div>
+                        <div class="form-group return">
+                            <div class="col-xs-12">
+                                <a class="">返&nbsp回</a>
+                            </div>
+                        </div>
+                        {/if}
+                    </form>
+                    {else}
+                    <div class="join-or-create-team">
+                        <div class="choice">
+                            <input type="radio" name="team-operate" id="join-team-radio" class="operate-radio" checked="checked" value="0"><label
+                                for="join-team-radio"></label><span>加入队伍</span>
+                        </div>
+                        <div class="choice">
+                            <input type="radio" name="team-operate" id="create-team-radio" class="operate-radio" value="1"><label
+                                for="create-team-radio"></label><span>创建队伍</span>
+                        </div>
+                        <form action="index.php?controller=Team&method=joinTeam" class="form-horizontal team-form" id="join-team-form" method="post">
+                            <div class="form-group">
+                                <div class="col-xs-4 control-label">团队ID<span class="req">*</span></div>
+                                <div class="col-xs-8"><input type="number" class="form-control" name="team_id" placeholder="请输入团队ID" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-4 control-label">邀请码<span class="req">*</span></div>
+                                <div class="col-xs-8"><input type="text"
+                                                             class="form-control" name="team_invitation_code" placeholder="请输入邀请码" required></div>
+                            </div>
+                            <div id="userJoinInTeamInfo">
+                                {include file='index/part_views/personal_center/userJoinInTeamInfoView_part.html'}
+                            </div>
+
+                        </form>
+                        <form action="index.php?controller=Team&method=createTeam" class="form-horizontal team-form" id="create-team-form" method="post">
+                            <div class="form-group">
+                                <div class="col-xs-4 control-label">团队名称<span class="req">*</span></div>
+                                <div class="col-xs-8"><input type="text"
+                                                             class="form-control" name="team_name" placeholder="自定义团队名称" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-4 control-label">邀请码<span class="req">*</span></div>
+                                <div class="col-xs-8"><input type="text"
+                                                             class="form-control" name="team_invitation_code" placeholder="自定义邀请码" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-4 control-label">团队口号</div>
+                                <div class="col-xs-8"><input type="text" class="form-control" placeholder="自定义团队口号" name="team_slogan">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-4 control-label">团队简介</div>
+                                <div class="col-xs-8"><textarea type="text" class="form-control" placeholder="自定义团队简介" name="team_profile"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group addTeam">
+                                <div class="col-xs-12">
+                                    <button type="submit" class="btn" disabled="disabled">提&nbsp;交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    {/if}
+                </div>
+            </section>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</article>
+
+{include file='index/part_views/common/footer_part.html'}
+
+</body>
+{include file='index/part_views/common/all_script.html'}
+
+</html>

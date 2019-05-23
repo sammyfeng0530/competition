@@ -1,0 +1,32 @@
+/* contest-scheme-content part
+  ---------------------------------------------------------------------------
+*/
+
+.contest-scheme-content {
+  @extend .contest-events-content;
+  .scheme-section {
+    @extend .news-section;
+    article {
+      font-family: "Microsoft YaHei";
+      font-size: 1em;
+    }
+  }
+  .scheme-name {
+    @extend .news-time;
+    div {
+      width: 30%;
+    }
+    h2 {
+      font-size: 1.3em !important;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+}
+
+/* contest-scheme-content part end
+  ==========================================================================
+*/

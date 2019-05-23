@@ -1,0 +1,60 @@
+/* global part
+  ---------------------------------------------------------------------------
+*/
+
+* {
+  color: #fff;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+}
+
+button, [type="button"], [type="reset"], [type="submit"] {
+  -webkit-appearance: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  &:active {
+    color: #fff;
+  }
+  cursor: pointer;
+}
+
+body {
+  background: #000;
+  font-size: 14px;
+  .hp-content {
+    padding-top: 8em;
+    background-image: url("../../images/BG.jpg");
+  }
+}
+
+/*** custom checkboxes ***/
+
+input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+input[type=checkbox] + label:before {
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+input[type=checkbox] + label:before { content: "\f096"; } /* unchecked icon */
+input[type=checkbox] + label:before { letter-spacing: 10px; } /* space between checkbox and label */
+
+input[type=checkbox]:checked + label:before { content: "\f046"; } /* checked icon */
+input[type=checkbox]:checked + label:before { letter-spacing: 5px; } /* allow space for check mark */
+
+$fontcolor: #7acfec;
+@mixin font-linear-gradient($direction, $color1, $color2) {
+  background-image: -webkit-linear-gradient($direction, $color1, $color2);
+  background-image: -moz-linear-gradient(to $direction, $color1, $color2);
+  background-image: -ms-linear-gradient(to $direction, $color1, $color2);
+  -webkit-background-clip: text;
+  color: rgba(255, 255, 255, 0.8);
+  -webkit-text-fill-color: transparent;
+}
+
+/* global part end
+  ==========================================================================
+*/

@@ -1,0 +1,32 @@
+
+    <h4>队伍详情</h4>
+    <div class="form-group">
+        <div class="col-xs-4 control-label">团队名称</div>
+        <div class="col-xs-8">
+            <input class="form-control" value="{$team.team_name|default:''}" disabled="disabled">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-4 control-label">团队口号</div>
+        <div class="col-xs-8">
+            <input class="form-control" value="{$team.team_slogan|default:''}" disabled="disabled">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-4 control-label">团队简介</div>
+        <div class="col-xs-8">
+            <textarea class="form-control" disabled="disabled">{$team.team_profile|default:''}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-4 control-label">团队情况</div>
+        <div class="col-xs-8">
+            <input class="form-control" disabled="disabled"
+                   value="{if isset($team_situation)}{if $team_situation == 1}允许加入{/if}{if $team_situation == 0}该队已报名，无法加入新成员{/if}{else}&nbsp;{/if}">
+        </div>
+    </div>
+    <div class="form-group join-in-submit">
+        <div class="col-xs-12">
+            <button class="btn" type="submit" {if (!isset($team_situation)) or ($team_situation != 1)} disabled="disabled" {/if}>提&nbsp;交</button>
+        </div>
+    </div>

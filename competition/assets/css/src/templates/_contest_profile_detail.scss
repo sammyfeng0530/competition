@@ -1,0 +1,68 @@
+/* contest-profile-detail part
+  ---------------------------------------------------------------------------
+*/
+
+.contest-profile-detail {
+  .contest-profile-pw {
+    .contest-profile-pic {
+      float: right;
+      width: 65%;
+      position: relative;
+      margin: 5%;
+      text-align: center;
+      background: rgba(0, 0, 0, .5);
+      .pic-border {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        //border: 1px solid #00d3e7;
+        > div {
+          width: 3.125em;
+          height: 3.125em;
+          position: absolute;
+        }
+        $border-horn: 0.6875em solid #0190c2;
+        $border-horn-position: -0.625em;
+        .lt {
+          border-top: $border-horn;
+          border-left: $border-horn;
+          left: $border-horn-position;
+          top: $border-horn-position;
+        }
+        .rt {
+          border-top: $border-horn;
+          border-right: $border-horn;
+          right: $border-horn-position;
+          top: $border-horn-position;
+        }
+        .rb {
+          border-bottom: $border-horn;
+          border-right: $border-horn;
+          right: $border-horn-position;
+          bottom: $border-horn-position;
+        }
+        .lb {
+          border-bottom: $border-horn;
+          border-left: $border-horn;
+          left: $border-horn-position;
+          bottom: $border-horn-position;
+        }
+      }
+      img {
+        width: 90%;
+        padding: 5%;
+      }
+    }
+    .contest-profile-word {
+      p {
+        font-size: 1.1em;
+        line-height: 2;
+        text-indent: 2.4em;
+      }
+    }
+  }
+}
+
+/* contest-profile-detail part end
+  ==========================================================================
+*/

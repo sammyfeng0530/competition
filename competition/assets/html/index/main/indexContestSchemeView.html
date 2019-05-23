@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=0.5, maximum-scale=1.5, user-scalable=yes"/>
+    {include file='index/part_views/common/all_css.html'}
+</head>
+<body>
+{if isset($smarty.session.userId)}
+{include file='index/part_views/common/popupForm_part.html'}
+{else}
+{include file='index/part_views/common/loginForm_part.html'}
+{/if}
+
+{include file='index/part_views/common/top_part.html'}
+
+<article class="container hp-content">
+    <div class="hp-container">
+        <article class="contest-scheme-content">
+            <h1>方案展示</h1>
+            <section>
+                {if isset($isDetail)}
+                <section class="scheme-section">
+                    <header class="scheme-name">
+                        <div><h2>{$scheme.scheme_name}</h2></div>
+                    </header>
+                    <article>
+                        <p>
+                            {$scheme.scheme_content}
+                        </p>
+                    </article>
+                </section>
+                {else}
+                {foreach $schemes as $scheme}
+                <section class="scheme-section">
+                    <header class="scheme-name">
+                        <div><h2><a href="index.php?controller=Index&method=getSchemeDetail&id={$scheme.scheme_id}">【{$scheme.scheme_score}】{$scheme.scheme_name}</a>
+                        </h2></div>
+                    </header>
+                    <article>
+                        <p>
+                            {$scheme.scheme_content}
+                        </p>
+                    </article>
+                </section>
+                {/foreach}
+                {/if}
+                {include file='index/part_views/common/signup_button_part.html'}
+            </section>
+
+        </article>
+    </div>
+</article>
+
+{include file='index/part_views/common/footer_part.html'}
+
+</body>
+{include file='index/part_views/common/all_script.html'}
+
+</html>
+

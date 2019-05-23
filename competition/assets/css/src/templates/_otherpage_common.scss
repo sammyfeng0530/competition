@@ -1,0 +1,56 @@
+/* other page common part
+  ---------------------------------------------------------------------------
+*/
+.hp-container {
+  > article {
+    width: 90%;
+    background-image: url("../../images/border.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 2.5em 5% 5em;
+    margin-top: 3em;
+    > h1 {
+      float: left;
+      font-weight: 600;
+      font-size: 2.8em;
+      @include font-linear-gradient(left top, #9de2f2, #fff);
+      margin: 0px 5%;
+      clear: both;
+    }
+    > section {
+      padding: 12.5em 0 3em;
+    }
+    .sign-up-button {
+      float: right;
+      width: 40%;
+    }
+  }
+}
+
+.sign-up-button {
+  background-image: url("../../images/button-bg.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  //padding:20px 50px;
+  a {
+    display: block;
+    font-weight: 600;
+    font-size: 2em;
+    white-space: nowrap;
+    @include font-linear-gradient(left top, #1ec9ea, #fff);
+    padding: 12% 0 7% 40%;
+    &:hover {
+      @include font-linear-gradient(left top, #72cee1, #fff);
+      transform: translateX(3px);
+      transition: all linear .5s;
+    }
+  }
+}
+
+.custom-button {
+  @extend .sign-up-button;
+}
+
+/* other page common part end
+  ==========================================================================
+*/

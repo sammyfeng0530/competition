@@ -1,0 +1,68 @@
+/* contest-events-content part
+  ---------------------------------------------------------------------------
+*/
+.contest-events-content {
+  article {
+    padding: 1.5em 0;
+    p {
+      font-size: 0.95em;
+      text-indent: 2em;
+      line-height: 2;
+    }
+    img{
+      max-width: 100%;
+    }
+  }
+  .news-section {
+    padding-bottom: 1.5em;
+  }
+  .news-time {
+    div {
+      width: 7em;
+      margin-left: 5em;
+      -webkit-transform: skew(-45deg);
+      -moz-transform: skew(-45deg);
+      -ms-transform: skew(-45deg);
+      -o-transform: skew(-45deg);
+      transform: skew(-45deg);
+      border-bottom: 2px solid #2d687d;
+      border-right: 2px solid #77d1f1;
+      h2 {
+        font-weight: 600;
+        font-size: 1.1em;
+        margin: 5px;
+        text-align: left;
+        -webkit-transform: skew(45deg);
+        -moz-transform: skew(45deg);
+        -ms-transform: skew(45deg);
+        -o-transform: skew(45deg);
+        transform: skew(45deg);
+        @include font-linear-gradient(top, #77d1f1, #fff);
+      }
+      &:after {
+        -webkit-transform: skew(45deg);
+        -moz-transform: skew(45deg);
+        -ms-transform: skew(45deg);
+        -o-transform: skew(45deg);
+        transform: skew(45deg);
+        content: '';
+        display: block;
+        background: black;
+        border-radius: 50%;
+        height: 1.5em;
+        width: 1.5em;
+        margin: -0.8em 0 0 -2.5em;
+        position: absolute;
+        box-shadow: 1px 1px 10px 3px #77d1f1;
+        background: radial-gradient(circle at 10px 10px, #fdfeff, #2d687d, #000);
+        background: -webkit-radial-gradient(circle at 10px 10px, #fdfeff, #2d687d, #000);
+        background: -moz-radial-gradient(circle at 10px 10px, #fdfeff, #2d687d, #000);
+      }
+    }
+
+  }
+}
+
+/* contest-events-content part end
+  ==========================================================================
+*/

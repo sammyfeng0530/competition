@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=0.5, maximum-scale=1.5, user-scalable=yes"/>
+    {include file='index/part_views/common/all_css.html'}
+</head>
+<body>
+
+{if isset($smarty.session.userId)}
+{include file='index/part_views/common/popupForm_part.html'}
+{else}
+{include file='index/part_views/common/loginForm_part.html'}
+{/if}
+
+{include file='index/part_views/common/top_part.html'}
+
+<article class="container hp-content">
+    <div class="hp-container">
+        <div class="personal-center">
+            {include file='index/part_views/personal_center/userLeftMenuView_part.html'}
+            <section class="right-content col-xs-9">
+                <div class="right-container">
+                    <div class="my-scheme-show">
+                        <header><h1>团队方案</h1></header>
+                        {if isset($hasTeam) and $hasTeam eq "0"}
+                        <article class="prompt-box"><p>请先加入队伍</p></article>
+                        {else}
+                        {if isset($scheme.scheme_id) and $scheme.scheme_id neq null}
+                        <article class="scheme-content-show">
+                            <h2 class="scheme-name">{$scheme.scheme_name|default:''}</h2>
+                            <span>目前得分：
+                                <span class="scheme-score">
+                                    {if ($scheme.scheme_score neq null) and ($scheme.scheme_score neq 0)}
+                                    {$scheme.scheme_score}
+                                    {else}
+                                    尚未评分
+                                    {/if}
+                                </span>
+                            </span>
+                            <div class="scheme-content">{$scheme.scheme_content|default:''}</div>
+                            {if ($scheme.scheme_score eq null) or ($scheme.scheme_score eq 0)}
+                            <div class="custom-button edit-scheme"><a href="">编辑方案</a></div>
+                            <div class="clearfix"></div>
+                            {/if}
+                        </article>
+                        {if ($scheme.scheme_score eq null) or ($scheme.scheme_score eq 0)}
+                        <article class="scheme-editor" style="display:none;">
+                            <div class="scheme-title">
+                                <input type="text" maxlength="100" placeholder="输入文章标题" name="scheme_name"
+                                       value="{$scheme.scheme_name|default:''}" required>
+                                <span class="max-length">0/100</span>
+                            </div>
+                            <div class="scheme-editor-content">
+                                <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+                                    <div class="btn-group">
+                                        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                           title="Font"><i
+                                                class="fa fa-font"></i><b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                        </ul>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                           title="Font Size"><i
+                                                class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+                                            <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+                                            <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default" data-edit="bold" title="加粗 (Ctrl/Cmd+B)"><i
+                                                class="fa fa-bold"></i></a>
+                                        <a class="btn btn-default" data-edit="italic" title="斜体 (Ctrl/Cmd+I)"><i
+                                                class="fa fa-italic"></i></a>
+                                        <a class="btn btn-default" data-edit="strikethrough" title="删除线"><i
+                                                class="fa fa-strikethrough"></i></a>
+                                        <a class="btn btn-default" data-edit="underline" title="下划线 (Ctrl/Cmd+U)"><i
+                                                class="fa fa-underline"></i></a>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default" data-edit="insertunorderedlist" title="符号列表"><i
+                                                class="fa fa-list-ul"></i></a>
+                                        <a class="btn btn-default" data-edit="insertorderedlist" title="数字列表"><i
+                                                class="fa fa-list-ol"></i></a>
+                                        <a class="btn btn-default" data-edit="outdent" title="减少缩进 (Shift+Tab)"><i
+                                                class="fa fa-outdent"></i></a>
+                                        <a class="btn btn-default" data-edit="indent" title="增加缩进 (Tab)"><i
+                                                class="fa fa-indent"></i></a>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default" data-edit="justifyleft"
+                                           title="左对齐 (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                                        <a class="btn btn-default" data-edit="justifycenter"
+                                           title="居中对齐 (Ctrl/Cmd+E)"><i
+                                                class="fa fa-align-center"></i></a>
+                                        <a class="btn btn-default" data-edit="justifyright"
+                                           title="右对齐 (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                                        <a class="btn btn-default" data-edit="justifyfull" title="两端对齐 (Ctrl/Cmd+J)"><i
+                                                class="fa fa-align-justify"></i></a>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="超链接"><i
+                                                class="fa fa-link"></i></a>
+                                        <div class="dropdown-menu input-append">
+                                            <input class="span2" placeholder="URL" type="text" data-edit="createLink"/>
+                                            <button class="btn" type="button">添加</button>
+                                        </div>
+                                        <a class="btn btn-default" data-edit="unlink" title="移除链接"><i
+                                                class="fa fa-cut"></i></a>
+
+                                    </div>
+
+                                    <div class="btn-group">
+                                        <a class="btn btn-default" title="插入图片"
+                                           id="pictureBtn"><i class="fa fa-images"></i></a>
+                                        <input type="file" data-role="magic-overlay" data-target="#pictureBtn"
+                                               data-edit="insertImage"/>
+                                    </div>
+
+                                    <div class="btn-group">
+                                        <a class="btn btn-default" data-edit="undo" title="撤销 (Ctrl/Cmd+Z)"><i
+                                                class="fa fa-undo"></i></a>
+                                        <a class="btn btn-default" data-edit="redo" title="重做 (Ctrl/Cmd+Y)"><i
+                                                class="fa fa-redo"></i></a>
+                                    </div>
+                                    <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">
+                                </div>
+                                <div id="editor" contenteditable="true">
+                                    {$scheme.scheme_content|default:''}
+                                </div>
+                            </div>
+                            <div class="custom-button upload-scheme">
+                                <a type="submit" href="index.php?controller=Scheme&method=addScheme">提&nbsp;交</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </article>
+                        {/if}
+                        {/if}
+                        {if (!isset($scheme))}
+                        <article class="scheme-editor" style="display:block;">
+                            <div class="scheme-title">
+                                <input type="text" maxlength="100" placeholder="输入文章标题" name="scheme_name"
+                                       value="" required>
+                                <span class="max-length">0/100</span>
+                            </div>
+                            <div class="scheme-editor-content">
+                                <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+                                    <div class="btn-group">
+                                        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                           title="Font"><i
+                                                class="fa fa-font"></i><b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                        </ul>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                           title="Font Size"><i
+                                                class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+                                            <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+                                            <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default" data-edit="bold" title="加粗 (Ctrl/Cmd+B)"><i
+                                                class="fa fa-bold"></i></a>
+                                        <a class="btn btn-default" data-edit="italic" title="斜体 (Ctrl/Cmd+I)"><i
+                                                class="fa fa-italic"></i></a>
+                                        <a class="btn btn-default" data-edit="strikethrough" title="删除线"><i
+                                                class="fa fa-strikethrough"></i></a>
+                                        <a class="btn btn-default" data-edit="underline" title="下划线 (Ctrl/Cmd+U)"><i
+                                                class="fa fa-underline"></i></a>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default" data-edit="insertunorderedlist" title="符号列表"><i
+                                                class="fa fa-list-ul"></i></a>
+                                        <a class="btn btn-default" data-edit="insertorderedlist" title="数字列表"><i
+                                                class="fa fa-list-ol"></i></a>
+                                        <a class="btn btn-default" data-edit="outdent" title="减少缩进 (Shift+Tab)"><i
+                                                class="fa fa-outdent"></i></a>
+                                        <a class="btn btn-default" data-edit="indent" title="增加缩进 (Tab)"><i
+                                                class="fa fa-indent"></i></a>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default" data-edit="justifyleft"
+                                           title="左对齐 (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                                        <a class="btn btn-default" data-edit="justifycenter"
+                                           title="居中对齐 (Ctrl/Cmd+E)"><i
+                                                class="fa fa-align-center"></i></a>
+                                        <a class="btn btn-default" data-edit="justifyright"
+                                           title="右对齐 (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                                        <a class="btn btn-default" data-edit="justifyfull" title="两端对齐 (Ctrl/Cmd+J)"><i
+                                                class="fa fa-align-justify"></i></a>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="超链接"><i
+                                                class="fa fa-link"></i></a>
+                                        <div class="dropdown-menu input-append">
+                                            <input class="span2" placeholder="URL" type="text" data-edit="createLink"/>
+                                            <button class="btn" type="button">添加</button>
+                                        </div>
+                                        <a class="btn btn-default" data-edit="unlink" title="移除链接"><i
+                                                class="fa fa-cut"></i></a>
+
+                                    </div>
+
+                                    <div class="btn-group">
+                                        <a class="btn btn-default" title="插入图片"
+                                           id="pictureBtn"><i class="fa fa-images"></i></a>
+                                        <input type="file" data-role="magic-overlay" data-target="#pictureBtn"
+                                               data-edit="insertImage"/>
+                                    </div>
+
+                                    <div class="btn-group">
+                                        <a class="btn btn-default" data-edit="undo" title="撤销 (Ctrl/Cmd+Z)"><i
+                                                class="fa fa-undo"></i></a>
+                                        <a class="btn btn-default" data-edit="redo" title="重做 (Ctrl/Cmd+Y)"><i
+                                                class="fa fa-redo"></i></a>
+                                    </div>
+                                    <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">
+                                </div>
+                                <div id="editor" contenteditable="true">
+
+                                </div>
+                            </div>
+                            <div class="custom-button upload-scheme">
+                                <a type="submit" href="index.php?controller=Scheme&method=addScheme">提&nbsp;交</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </article>
+                        {/if}
+                        {/if}
+                    </div>
+                </div>
+            </section>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</article>
+
+{include file='index/part_views/common/footer_part.html'}
+
+</body>
+{include file='index/part_views/common/all_script.html'}
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=0.5, maximum-scale=1.5, user-scalable=yes"/>
+    {include file='index/part_views/common/all_css.html'}
+</head>
+<body>
+
+{if isset($smarty.session.userId)}
+{include file='index/part_views/common/popupForm_part.html'}
+{else}
+{include file='index/part_views/common/loginForm_part.html'}
+{/if}
+
+{include file='index/part_views/common/top_part.html'}
+<article class="container hp-content">
+    <div class="hp-container">
+        <article class="contest-arrangement-content">
+            <h1>赛程安排</h1>
+            <section>
+                <table class="table-responsive">
+                    <tbody>
+                    <tr>
+                        <th class="col-sm-2">赛程</th>
+                        <th class="col-sm-4">日期</th>
+                        <th class="col-sm-6">说明</th>
+                    </tr>
+                    <tr>
+                        <td>初赛</td>
+                        <td>9月1日-10月31日</td>
+                        <td>
+                            <ol>具体时间根据初赛事学校大赛通知为准；</ol>
+                            <ol>出赛赛制根据学院不同会有些许的调整；</ol>
+                            <ol>初赛赛程时间在2-3周。</ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">决赛</td>
+                        <td>11月24日</td>
+                        <td>
+                            <ol>集中签到</ol>
+                            <ol>参加虚拟实景平台体验活动</ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>11月25日</td>
+                        <td>
+                            <ol>上午8:00，大赛开幕式，抽签；</ol>
+                            <ol>上午9：00-12：00实验配置；</ol>
+                            <ol>下午14：00-18：00按抽签顺序答辩；</ol>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>11月26日</td>
+                        <td>
+                            <ol>上午8：00-12：00现场答辩；</ol>
+                            <ol>下午14：00-16：00闭幕式颁奖典礼。</ol>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                {include file='index/part_views/common/signup_button_part.html'}
+            </section>
+
+        </article>
+    </div>
+</article>
+{include file='index/part_views/common/footer_part.html'}
+</body>
+
+{include file='index/part_views/common/all_script.html'}
+
+</html>

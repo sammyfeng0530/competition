@@ -1,0 +1,38 @@
+/* contest-arrangement-content part
+  ---------------------------------------------------------------------------
+*/
+.contest-arrangement-content {
+  table {
+    /*    border: 1px solid #73e3f9;
+        padding: 10px;
+        width: 100%;*/
+    tr {
+      text-align: center;
+      td {
+        border: 0.3em solid #73e3f9;
+        font-size: 1.1em;
+        line-height: 2;
+        padding: 1.5em;
+        &:last-of-type {
+          text-align: left;
+        }
+        ol {
+          list-style-type: lower-roman;
+          list-style-position: inside;
+        }
+      }
+      th {
+        @extend td;
+        text-align: center !important;
+      }
+    }
+
+  }
+  .sign-up-button {
+    margin-top: 50px;
+  }
+}
+
+/* contest-arrangement-content part end
+  ==========================================================================
+*/
