@@ -8,6 +8,8 @@
 - HTML5
 - CSS3、SASS
 - ES6、ES5
+- Bootstrap
+- JQuery
 - 大量Ajax
 - Gulp
 <br>
