@@ -42,4 +42,4 @@ $ git clone https://github.com/sm450203924/competition.git
 <br>
 
 ## 我的相关博客
-<a href="https://blog.csdn.net/qq_37431724/article/details/88604964" target="_blank">mvc架构模式分析与设计（慕课网学习笔记）</a>
+<a href="https://blog.csdn.net/qq_37431724/article/details/88604964" target="_blank">mvc架构模式分析与设计</a>
